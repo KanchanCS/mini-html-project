@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <script src='other/jquery-3.2.1.min.js' type='text/javascript'></script>
+    <script src='other/select2/dist/js/select2.min.js' type='text/javascript'></script>
+    <link href='other/select2/dist/css/select2.min.css' rel='stylesheet' type='text/css'>
+    <title>REGISTION task_1</title>
+
+
+</head>
+<body>
+    <div class="stu">
+        <form action="#" name="home" onsubmit="return(validate());" autocomplete="off" action="/action_page.php">
+            <div class="container">
+                <h1>Registion Form</h1>
+                <div class="form-container">
+                    <div>
+                        <label>Name</label>
+                        <input type="text" placeholder="Enter Name" class="name" id="name">
+                    </div>
+                    <div>
+                        <label>Class</label>
+                        <input type="text" placeholder="Enter Class" class="class" id="class">
+                    </div>
+
+                    <div>
+                        <label>Date Of Birth</label>
+                        <input type="date" name="dob" id="dob" class="dob" placeholder="Enter vaild Mail"
+                            aria-describedby="helpId">
+                    </div>
+
+                    <div>
+                        <label>Mobile No.</label>
+                        <input type="tel" name="Mobile No" maxlength="10" placeholder="Enter 10 Digit Mobile No"
+                            class="mobileno" id="mobileno">
+                    </div>
+
+                    <div>
+                        <label>Email ID.</label>
+                        <input type="email" placeholder="Enter Email Id" class="email" id="email">
+                    </div>
+
+                    <div>
+                        <label>Address</label><br>
+                        <textarea id="address" name="address" placeholder="Enter Address"></textarea>
+                    </div>
+
+                    <div>
+                        <label for="">Country</label><br>
+                        <select name="country" id="countySel">
+                            <option value="" selected="selected">Select country</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="">State</label><br>
+                        <select name="state" id="stateSel">
+                            <option value="" selected="selected">Please select state</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="">City</label><br>
+                        <select name="city" id="citySel">
+                            <option value="" selected="selected">Please select city</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="">Location</label><br>
+                        <select name="Location" id="locationSel">
+                            <option value="" selected="selected">Please select location</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Pin Code</label>
+                        <select name="pincode" id="zipSel">
+                            <option value="" selected="selected">Please select PinCode</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button type="Reset" name="rest" id="rest" class="btn btn-primary">Reset Form</button>
+                        <button type="submit" name="submit" id="submit" class="btn btn-primary">Submit Form</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+<!-- store data -->
+<script>
+var countryStateInfo = {
+	"USA": {
+		"California": {
+			"Los Angeles": {"Vegas":["11111"],
+			"San Diego": ["92101"]
+        }
+		},
+		"Texas": {
+			"Dallas": ["75201"],
+			"Austin": ["73301"]
+		}
+	},
+    "India": {
+            "Uttar Pradesh":{
+                "Lucknow":{
+                    "telibaag":["226001"],
+                    "aalmbagh":["226016"],
+                    "lalabaag":["226020"],
+                    },
+                "kanpur":{
+                 "nvabganj" :["272001"] ,
+                 "bighapur" :["272002"] ,
+                },
+                 },
+		"Gujarat": {
+			"Vadodara" :{
+            "nanes": ["390011"],
+			"Surat" : ["395006"]
+            }
+		}
+	}
+}
+
+
+window.onload = function () {
+	
+	
+	var countySel = document.getElementById("countySel");
+	var stateSel = document.getElementById("stateSel");
+	var citySel = document.getElementById("citySel");
+    var locationSel = document.getElementById("locationSel");
+	var zipSel = document.getElementById("zipSel");
+	
+	
+	for (var country in countryStateInfo) {
+		countySel.options[countySel.options.length] = new Option(country, country);
+	}
+	
+	
+	countySel.onchange = function () {
+		 
+		 stateSel.length = 1; 
+		 citySel.length = 1;
+         locationSel.length =1;                   
+		 zipSel.length = 1;
+		 
+		 if (this.selectedIndex < 1)
+			 return; 
+		 
+		 for (var state in countryStateInfo[this.value]) {
+			 stateSel.options[stateSel.options.length] = new Option(state, state);
+		 }
+	}
+	
+	
+	stateSel.onchange = function () {		 
+		 
+		 citySel.length = 1;
+         locationSel.length =1; 
+		 zipSel.length = 1;    
+		 
+		 if (this.selectedIndex < 1)
+			 return;
+		 
+		 for (var city in countryStateInfo[countySel.value][this.value]) {
+			 citySel.options[citySel.options.length] = new Option(city, city);
+		 }
+	}
+    citySel.onchange = function () {		 
+		 
+		 locationSel.length = 1; 
+		 zipSel.length = 1; 
+		 
+		 if (this.selectedIndex < 1)
+			 return; 
+		 
+		 for (var location in countryStateInfo[countySel.value][stateSel.value][this.value]) {
+			 locationSel.options[locationSel.options.length] = new Option(location, location);
+		 }
+	}
+	
+	
+	locationSel.onchange = function () {
+		zipSel.length = 1; 
+		
+		if (this.selectedIndex < 1)
+			return; 
+		
+		var zips = countryStateInfo[countySel.value][stateSel.value][citySel.value][this.value];
+		for (var i = 0; i < zips.length; i++) {
+			zipSel.options[zipSel.options.length] = new Option(zips[i], zips[i]);
+		}
+	}	
+
+}
+
+ </script>
+    
+    <script>
+        $(document).ready(function () {
+            $("#countySel").select2();
+            $('#but_read').click(function () {
+                var username = $('#country option:selected').text();
+                var userid = $('#countySel').val();
+
+                $('#countySel').html("id : " + userid + ", name : " + username);
+            });
+        });
+ </script>
+  
+ <script>
+        $(document).ready(function () {
+            $("#stateSel").select2();
+            $('#but_read').click(function () {
+                var username = $('#state option:selected').text();
+                var userid = $('#stateSel').val();
+
+                $('#state').html("id : " + userid + ", name : " + username);
+            });
+        });
+    </script>
+  
+
+    
+
+    <script>
+        $(document).ready(function () {
+            $("#citySel").select2();
+            $('#but_read').click(function () {
+                var username = $('#city option:selected').text();
+                var userid = $('#citySel').val();
+                $('#city').html("id : " + userid + ", name : " + username);
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#locationSel").select2();
+            $('#but_read').click(function () {
+                var username = $('#location option:selected').text();
+                var userid = $('#locationSel').val();
+                $('#location').html("id : " + userid + ", name : " + username);
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#zipSel").select2();
+            $('#but_read').click(function () {
+                var username = $('#piccode option:selected').text();
+                var userid = $('#zipSel').val();
+                $('#pincode').html("id : " + userid + ", name : " + username);
+            });
+        });
+    </script>
+    <script src="reg.js"></script>
+
+</body>
+
+</html>

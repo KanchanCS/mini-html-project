@@ -1,0 +1,57 @@
+
+.stu{
+    background-color: #85c062;
+    border: 5px solid green;
+    width: 500px;
+    max-width: 100%;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%) ;
+    box-shadow: 4px 4px 8px #ccc;
+    
+}
+.container{
+    padding:10px 20px;
+
+}
+.stu .container h1{
+    text-align: center;
+    margin-top: 10px !important;
+}
+.stu .container input{
+    width:400px;
+    max-width: 100%;
+    margin: 10px;
+    padding: 5px;
+
+}
+ .stu .container select{
+    width: 400px;
+    
+
+}
+textarea{
+    width: 350px;
+    max-width: 100%;
+}
+::placeholder{
+    color: rgb(2, 43, 2);
+    font-size: 13px;
+    text-transform: uppercase;
+}
+button{
+    border:2px solid rgb(2, 73, 2);
+    background-color: rgb(140, 243, 140);
+    box-shadow:4px 4px 8px rgba(0, 128, 0, 0.296);
+    text-transform: uppercase;
+    padding: 5px;
+    margin: 10px 30px;
+    font-weight: 600;
+    color: rgb(2, 37, 2);
+    cursor: pointer;
+}
+button:hover{
+    background-color: #fafafa;
+    transition: ease-in-out 800ms;
+}

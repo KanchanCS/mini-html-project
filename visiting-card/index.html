@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Business Card</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div style="float: left;" id="user_selection">
+
+        <div id="userinput">
+
+            <div class="left" id="details" style="float: left;">
+                <input class="input" id="name" placeholder="Name" onchange="updateName()"><br>
+                <input class="input" id="work" placeholder="Profession" onchange="updateWork()"><br>
+                <input class="input" id="workplace" placeholder="Workplace" onchange="updateWorkplace()"><br>
+                <input class="input" id="city" placeholder="City" onchange="updateCity()"><br>
+                <input class="input" id="country" placeholder="Country" onchange="updateCountry()"><br>
+                <textarea class="input" id="description" placeholder="Short Description"
+                    onchange="updateDesc()"></textarea><br>
+                <input class="input" id="phone" placeholder="Phone" onchange="updatePhone()"><br>
+                <input class="input" id="email" placeholder="Email" onchange="updateEmail()"><br>
+                <label for="file-ip-1">Upload Image</label>
+                <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
+            </div>
+
+
+        </div>
+
+        <div id="htmltoimage" style="float: right;" align="center">
+            <div class="card" id="card">
+
+                <div class="card-body">
+                    <div class="center">
+
+                        <div class="form-input">
+                            <div class="preview">
+                                <img id="file-ip-1-preview">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <p class="full-name" id="card-name">Kanchan Yadav</p>
+                    <p class="profession_location" id="add"> Developer | AARA | Lucknow, India</p>
+                    <p class="desc" id="desc_content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
+                        sapiente?</p>
+
+                </div>
+                <div class="card-footer">
+                    <div class="col vr">
+                        <span class="count"><i id="contact_no" class="fas fa-phone"> 1234567898</i></span>
+                    </div>
+                    <div id="mail" class="col">
+                        <span class="count"><i id="contact_mail" class="fas fa-envelope-square">
+                                kanchan@gmail.com</i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button onclick="downloadimage()" class="clickbtn">Click To Download Image</button>
+
+
+
+</body>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+<script type="text/javascript">
+
+    function downloadimage() {
+        /*var container = document.getElementById("image-wrap");*/ /*specific element on page*/
+        var container = document.getElementById("htmltoimage");; /* full page */
+        html2canvas(container, { allowTaint: true }).then(function (canvas) {
+
+            var link = document.createElement("a");
+            document.body.appendChild(link);
+            link.download = "html_image.jpg";
+            link.href = canvas.toDataURL();
+            link.target = '_blank';
+            link.click();
+        });
+    }
+
+</script>
+
+</html>

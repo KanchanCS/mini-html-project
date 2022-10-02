@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/about.css">
+
+    <script src='other/jquery-3.2.1.min.js' type='text/javascript'></script>
+    <script src='other/select2/dist/js/select2.min.js' type='text/javascript'></script>
+    <link href='other/select2/dist/css/select2.min.css' rel='stylesheet' type='text/css'>
+    <title>FROM task_2</title>
+
+    <style>
+        
+  
+  
+.stu{
+  background-color: #f2f7ef;
+  border: 5px solid rgb(155, 163, 211);
+  width: 500px;
+  max-width: 100%;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%) ;
+  box-shadow: 4px 4px 8px #ccc;
+  
+}
+.container{
+  padding:10px 20px;
+
+}
+.stu .container h1{
+  text-align: center;
+  margin-top: 10px !important;
+}
+.stu .container input{
+  width:400px;
+  max-width: 100%;
+  margin: 10px;
+  padding: 5px;
+
+}
+.stu .container select{
+  width: 400px;
+  
+
+}
+textarea{
+  width: 350px;
+  max-width: 100%;
+}
+::placeholder{
+  color: rgb(2, 43, 2);
+  font-size: 13px;
+  text-transform: uppercase;
+}
+button{
+  border:2px solid rgb(86, 130, 173);
+  background-color: rgb(69, 72, 163);
+  box-shadow:4px 4px 8px rgba(237, 241, 241, 0.296);
+  text-transform: uppercase;
+  padding: 5px;
+  margin: 10px 30px;
+  font-weight: 600;
+  color: rgb(2, 37, 2);
+  cursor: pointer;
+}
+button:hover{
+  background-color: #fafafa;
+  transition: ease-in-out 800ms;
+}
+
+    </style>
+
+
+</head>
+
+<body>
+    <div class="stu">
+        <form action="#" name="home" onsubmit="return(validate());" autocomplete="off" action="/action_page.php">
+            <div class="container">
+                <h1>Registion Form</h1>
+                <div class="form-container">
+                    <!-- enter the name -->
+                    <div>
+                        <label>Name</label>
+                        <input type="text" placeholder="Enter Name" class="name" id="name">
+                    </div>
+                    <!-- enter the class -->
+                    <div>
+                        <label>Class</label>
+                        <input type="text" placeholder="Enter Class" class="class" id="class">
+                    </div>
+                        <!-- enter the dob -->
+                    <div>
+                        <label>Date Of Birth</label>
+                        <input type="date" name="dob" id="dob" class="dob" placeholder="Enter vaild Mail"
+                            aria-describedby="helpId">
+                    </div>
+                    <!-- enter the mobile number -->
+                    <div>
+                        <label>Mobile No.</label>
+                        <input type="tel" name="Mobile No" maxlength="10" placeholder="Enter 10 Digit Mobile No"
+                            class="mobileno" id="mobileno">
+                    </div>
+                    <!-- enter the email -->
+                    <div>
+                        <label>Email ID.</label>
+                        <input type="email" placeholder="Enter Email Id" class="email" id="email">
+                    </div>
+                    <!-- enter pin code then select area,city,state,country -->
+                    <div>
+                    <label>Pin Code</label>
+                    <input type="text" name="pin" id="pin" class="form-control" placeholder="Enter Pin Code" required><br>                  
+                    <label>Area</label>
+                    <input type="text" name="area" id="area" class="form-control" placeholder="Enter Area" >
+                    <label>city</label>
+                     <input type="text" name="city" id="city" class="form-control" placeholder="Enter city" >
+                     <label>state</label>
+                     <input type="text" name="state" id="state" class="form-control" placeholder="Enter state" >
+                     <label>country</label>
+                     <input type="text" name="country" id="country" class="form-control" placeholder="Enter country" >
+                        
+                    </div>
+                   <!-- sumit button -->
+                    <div>
+                        <button type="Reset" name="rest" id="rest" class="btn btn-primary">Reset Form</button>
+                        <button type="submit" name="submit" id="submit" class="btn btn-primary">Submit Form</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+
+    <script>
+        // Enter pin code and get value on change of pin code
+       
+
+        pin.onchange = function(){
+     
+            if(pin.value == '226005'){
+                area.value = 'ALAMBAGH';
+                city.value = 'Lucknow';
+                state.value = 'Uttar Pradesh';
+                country.value ='India';
+                
+            }
+            else if(pin.value == '336001'){
+                area.value = 'ALAMBAGH';
+                city.value = 'Kanpur';
+                state.value = 'Uttar Pradesh';
+                country.value ='India';
+            }
+            else if(pin.value == '226001'){
+                area.value = 'ALAMBAGH';
+                city.value = 'Lucknow';
+                state.value = 'Uttar Pradesh';
+                country.value ='India';
+            }
+            else if(pin.value == '229121'){
+                area.value = 'ALAMBAGH';
+                city.value = 'Lalganj';
+                state.value = 'Uttar Pradesh';
+                country.value ='India';
+            }
+            else if(pin.value == '229122'){
+                area.value = 'ALAMBAGH';
+                city.value = 'Raipur';
+                state.value = 'Uttar Pradesh';
+                country.value ='India';
+            }
+            else if(pin.value == '229022'){
+                area.value = 'ALAMBAGH';
+                city.value = 'Rampur';
+                state.value = 'Uttar Pradesh';
+                country.value ='India';
+            }
+            else{
+                area.value = 'Not Found';
+                
+            }
+        }
+        </script>
+
+<script src="from.js"></script>
+
+</body>
+
+</html>
