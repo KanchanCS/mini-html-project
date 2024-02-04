@@ -7,7 +7,7 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     width: 550px;
     margin: 30px;
-    background-color: white;
+    background-color: rgb(128, 62, 62);
     position: relative;
     box-shadow: 0 3px 30px rgba(0, 0, 0, .14);
     color: rgb(34, 34, 34);
