@@ -1,0 +1,49 @@
+body{
+    background-image: url("/images/unsplash-Andre\ Benz.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+.container{
+    background-color: #746d6d;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    margin-top: 90px;
+    text-align: center;
+    border-top-left-radius: 100px ;
+    border-bottom-right-radius: 100px ;
+    opacity: 0.9;
+}
+.card-title{
+    padding-top: 30px ;
+    
+}
+a{
+    text-decoration: none;
+    color: blue; 
+    font-size: 1rem;
+}
+p{
+    font-size:0.85rem;
+}
+.form input{
+    width: 70%;
+    margin: 10px 0px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    color: rgb(15, 15, 46);
+    border-radius: 5px;
+}
+.form button{
+    width: 50%;
+    margin: 40px 0px;
+    padding: 10px;
+    background-color: rgba(12, 12, 198, 0.638);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
