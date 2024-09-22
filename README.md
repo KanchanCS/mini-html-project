@@ -1,4 +1,4 @@
   Form-1
-![Alt text](./final_design.png)
+![Alt text](/final_design.png)
 
 
