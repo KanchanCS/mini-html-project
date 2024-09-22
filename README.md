@@ -1,5 +1,5 @@
 ## Form-1
-![Alt text](https://github.com/KanchanCS/mini-html-project/Form/images/final-Desgin.png)
+![alt text](https://github.com/KanchanCS/mini-html-project/Form/main/images/final-Desgin.png?raw=true)
 
 
 
