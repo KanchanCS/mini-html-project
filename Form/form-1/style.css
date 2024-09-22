@@ -1,33 +1,38 @@
-body{
-    background-image: url("/images/unsplash-Andre\ Benz.jpg");
+body {
+    background-image: url("/form-1/images/unsplash-Andre\ Benz.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-   
+
 }
-.container{
+
+.container {
     background-color: #746d6d;
     width: 500px;
     height: 500px;
     margin: auto;
     margin-top: 90px;
     text-align: center;
-    border-top-left-radius: 100px ;
-    border-bottom-right-radius: 100px ;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
     opacity: 0.9;
 }
-.card-title{
-    padding-top: 30px ;
-    
+
+.card-title {
+    padding-top: 30px;
+
 }
-a{
+
+a {
     text-decoration: none;
-    color: blue; 
+    color: blue;
     font-size: 1rem;
 }
-p{
-    font-size:0.85rem;
+
+p {
+    font-size: 0.85rem;
 }
-.form input{
+
+.form input {
     width: 70%;
     margin: 10px 0px;
     border: none;
@@ -36,7 +41,8 @@ p{
     color: rgb(15, 15, 46);
     border-radius: 5px;
 }
-.form button{
+
+.form button {
     width: 50%;
     margin: 40px 0px;
     padding: 10px;
